@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useRef, useState } from "react";
 
 /**
@@ -10,9 +11,7 @@ import { useEffect, useRef, useState } from "react";
 + * or equal to 768px, false otherwise.
 + */
 export default function useIsMobile(): boolean {
-  const [screenSize, setScreenSize] = useState<number | null>(
-    window.innerWidth
-  );
+  const [screenSize, setScreenSize] = useState<number | null>(null);
 
   useEffect(() => {
     window.addEventListener("resize", () => {
